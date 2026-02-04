@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenue - Fondation MÉLANIE</title>
+  <title>Confirmation de parrainage - Fondation MÉLANIE</title>
   <style>
     body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
     .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
     .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
     .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
-    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; }
-    .content { padding: 32px 24px; color: #374151; line-height: 1.6; }
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em;}
+    .content { padding: 32px 24px; color: #374151; line-height: 1.7; }
     .content p { margin: 0 0 16px; }
     .highlight { font-weight: 600; color: #111827; }
-    .cta { display: inline-block; margin: 24px 0; padding: 14px 28px; background: #8fb83e; color: #111827; text-decoration: none; border-radius: 9999px; font-weight: 600; }
-    .cta:hover { background: #bae557; }
     .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
-    .url-note { margin-top: 16px; padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px; word-break: break-all; }
+    ul { margin: 0 0 20px 16px; padding: 0; color: #374151;}
+    li { margin-bottom: 10px;}
   </style>
 </head>
 <body>
@@ -26,25 +25,51 @@
         <h1>Fondation MÉLANIE</h1>
       </div>
       <div class="content">
-        <p>Bonjour <span class="highlight">{{name}}</span>,</p>
-
-        <p>Nous avons bien reçu votre demande de parrainage et nous vous en remercions.</p>
-
-        <p><strong>Bienvenue au sein de la Fondation MÉLANIE.</strong> Votre engagement compte pour les enfants et les familles que nous accompagnons.</p>
-
-        <p>Pour accéder à votre espace partenaire, consulter le suivi de votre parrainage et échanger avec nous, connectez-vous sur la plateforme :</p>
-
-        <p style="text-align: center;">
-          <a href="https://partenaire.melaniefondation.com" class="cta">Se connecter à l'espace partenaire</a>
+        <p>
+          Bonjour 
+          <span class="highlight">
+            {{#if civilite}}{{civilite}}, {{/if}}{{#if name}}{{name}}{{/if}}{{#if firstName}} {{firstName}}{{/if}}{{#if lastName}} {{lastName}}{{/if}}
+          </span>,
         </p>
 
-        <div class="url-note">
-          Lien : <a href="https://partenaire.melaniefondation.com">https://partenaire.melaniefondation.com</a>
-        </div>
+        <p>
+          Nous tenions à vous adresser un merci sincère et chaleureux pour votre engagement auprès de la Fondation Mélanie.
+        </p>
 
-        <p>Utilisez l’adresse email avec laquelle vous vous êtes inscrit : <strong>{{email}}</strong></p>
+        <p>
+          Votre formulaire de parrainage a bien été reçu, et nous sommes très heureux de vous accueillir parmi les parrains et marraines qui font la différence dans la vie des enfants et des étudiants que nous accompagnons.
+        </p>
 
-        <p>À très bientôt sur la plateforme,<br>L’équipe Fondation MÉLANIE</p>
+        <p>
+          Dans les tout prochains jours, notre équipe prendra contact avec vous afin de :
+        </p>
+        <ul>
+          <li>Confirmer officiellement votre parrainage,</li>
+          <li>Vous transmettre les informations de paiement (virement bancaire ou Mobile Money),</li>
+          <li>Et vous communiquer un lien sécurisé vous permettant de choisir l’enfant à parrainer, conformément à vos souhaits.</li>
+        </ul>
+
+        <p>
+          Une fois le parrainage finalisé, vous recevrez :
+        </p>
+        <ul>
+          <li>La confirmation définitive,</li>
+          <li>Les premières informations sur le bénéficiaire,</li>
+          <li>Ainsi que le calendrier de suivi et de communication de la Fondation.</li>
+        </ul>
+
+        <p>
+          Votre engagement est un geste fort. Il ouvre la voie à l’éducation, à la dignité et à un avenir meilleur.
+        </p>
+
+        <p>
+          Nous vous remercions profondément pour la confiance que vous nous accordez.
+        </p>
+
+        <p>
+          Avec toute notre gratitude,<br>
+          L’équipe de la Fondation Mélanie.
+        </p>
       </div>
       <div class="footer">
         © {{year}} Fondation MÉLANIE. Tous droits réservés.

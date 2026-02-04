@@ -1,3 +1,23 @@
+curl -X POST http://localhost:3005/notify \
+  -H "Content-Type: application/json" \
+  -d '{
+    "service": "email",
+    "recipients": { "email": "utilisateur@example.com" },
+    "subject": "Votre code de vérification",
+    "template": {
+      "name": "otp",
+      "data": {
+        "otp": "482917",
+        "appName": "Fondation MÉLANIE",
+        "name": "Marie",
+        "expiresIn": "10 minutes",
+        "year": 2025
+      }
+    },
+    "text": "Votre code de vérification : 482917. Il expire dans 10 minutes. Ne le partagez avec personne."
+  }'
+
+
 # Documentation — Serveur Melanie Notification
 
 Ce document décrit comment installer, configurer et utiliser le serveur de notifications **Melanie Notification**. Le serveur expose une API REST pour envoyer des notifications par **e-mail**, **SMS** (Twilio), **WhatsApp** (Twilio) et **Telegram**.

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const config = require('./config/config');
 const { validateNotification } = require('./utils/validator');
@@ -10,6 +11,9 @@ const { sendWhatsapp } = require('./services/whatsappService');
 const { sendTelegram } = require('./services/telegramService');
 
 const app = express();
+
+// CORS: allow all origins by default, or restrict via config.cors.origin
+app.use(cors(config.cors.origin ? { origin: config.cors.origin } : {}));
 
 // Middleware to parse JSON bodies
 app.use(express.json());

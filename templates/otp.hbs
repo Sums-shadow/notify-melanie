@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code de vérification</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+    .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
+    .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; }
+    .content { padding: 32px 24px; color: #374151; line-height: 1.6; }
+    .content p { margin: 0 0 16px; }
+    .otp-box { margin: 24px 0; padding: 20px; background: #f9fafb; border: 2px dashed #8fb83e; border-radius: 12px; text-align: center; }
+    .otp-code { font-size: 32px; font-weight: 700; letter-spacing: 8px; font-family: 'Courier New', monospace; color: #111827; }
+    .expiry { margin-top: 16px; font-size: 14px; color: #6b7280; }
+    .warning { margin-top: 24px; padding: 12px; background: #fef3c7; border-radius: 8px; font-size: 14px; color: #92400e; }
+    .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <h1>{{appName}}</h1>
+      </div>
+      <div class="content">
+        {{#if name}}
+        <p>Bonjour <strong>{{name}}</strong>,</p>
+        {{/if}}
+
+        <p>Voici votre code de vérification à usage unique :</p>
+
+        <div class="otp-box">
+          <div class="otp-code">{{otp}}</div>
+          {{#if expiresIn}}
+          <div class="expiry">Ce code expire dans {{expiresIn}}.</div>
+          {{/if}}
+        </div>
+
+        <div class="warning">
+          Ne partagez jamais ce code avec personne. Notre équipe ne vous le demandera pas par email, téléphone ou message.
+        </div>
+
+        <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>
+
+        <p>À bientôt,<br>L'équipe {{appName}}</p>
+      </div>
+      <div class="footer">
+        © {{year}} {{appName}}. Tous droits réservés.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
