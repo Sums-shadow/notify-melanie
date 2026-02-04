@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouveau parrainage - Fondation MÉLANIE</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+    .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
+    .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em; }
+    .content { padding: 32px 24px; color: #374151; line-height: 1.7; }
+    .content p { margin: 0 0 16px; }
+    .highlight { font-weight: 600; color: #111827; }
+    .badge { display: inline-block; margin: 20px 0; padding: 12px 20px; background: #dbeafe; color: #1d4ed8; border-radius: 8px; font-weight: 600; }
+    .info-block { margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 12px; border-left: 4px solid #8fb83e; }
+    .info-row { margin: 8px 0; }
+    .info-label { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+    .info-value { font-weight: 600; color: #111827; }
+    .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <h1>Fondation MÉLANIE — Administration</h1>
+      </div>
+      <div class="content">
+        <p>Un <strong>nouveau parrainage</strong> a été enregistré et doit être traité.</p>
+
+        <div class="badge">Nouveau parrainage</div>
+
+        <div class="info-block">
+          <div class="info-row">
+            <div class="info-label">Parrain / Marraine</div>
+            <div class="info-value">{{#if civilite}}{{civilite}} {{/if}}{{#if name}}{{name}}{{/if}}{{#if firstName}}{{firstName}}{{/if}}{{#if lastName}} {{lastName}}{{/if}}</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">Email</div>
+            <div class="info-value">{{email}}</div>
+          </div>
+          {{#if phone}}
+          <div class="info-row">
+            <div class="info-label">Téléphone</div>
+            <div class="info-value">{{phone}}</div>
+          </div>
+          {{/if}}
+          {{#if submittedAt}}
+          <div class="info-row">
+            <div class="info-label">Date d'enregistrement</div>
+            <div class="info-value">{{submittedAt}}</div>
+          </div>
+          {{/if}}
+          {{#if reference}}
+          <div class="info-row">
+            <div class="info-label">Référence</div>
+            <div class="info-value">{{reference}}</div>
+          </div>
+          {{/if}}
+        </div>
+
+        {{#if comment}}
+        <p><strong>Commentaire / Note :</strong><br>{{comment}}</p>
+        {{/if}}
+
+        <p>Merci de prendre contact avec le parrain / la marraine et de suivre le processus de validation du parrainage.</p>
+
+        <p>— Notification automatique, Fondation MÉLANIE</p>
+      </div>
+      <div class="footer">
+        © {{year}} Fondation MÉLANIE. Tous droits réservés.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

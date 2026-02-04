@@ -41,6 +41,10 @@ const config = {
     cors: {
         // Comma-separated origins, or leave empty to allow all origins
         origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()) : undefined,
+    },
+
+    partner: {
+        url: process.env.PARTNER_URL || null, // URL du portail partenaire (ex. pour le template partner-confirmation)
     }
 };
 

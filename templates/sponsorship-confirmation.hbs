@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmation de parrainage - Fondation MÉLANIE</title>
+  <title>Parrainage confirmé - Fondation MÉLANIE</title>
   <style>
     body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
     .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
     .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
     .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
-    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em;}
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em; }
     .content { padding: 32px 24px; color: #374151; line-height: 1.7; }
     .content p { margin: 0 0 16px; }
     .highlight { font-weight: 600; color: #111827; }
+    .badge { display: inline-block; margin: 20px 0; padding: 12px 20px; background: #ecfdf5; color: #047857; border-radius: 8px; font-weight: 600; }
     .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
-    ul { margin: 0 0 20px 16px; padding: 0; color: #374151;}
-    li { margin-bottom: 10px;}
     .cta-wrap { text-align: center; margin: 28px 0; }
     .cta { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); color: #ffffff; text-decoration: none; border-radius: 9999px; font-weight: 600; font-size: 16px; box-shadow: 0 2px 8px rgba(143, 184, 62, 0.35); }
     .cta:hover { opacity: 0.95; }
@@ -29,40 +28,28 @@
       </div>
       <div class="content">
         <p>
-          Bonjour 
+          Bonjour
           <span class="highlight">
             {{#if civilite}}{{civilite}}, {{/if}}{{#if name}}{{name}}{{/if}}{{#if firstName}} {{firstName}}{{/if}}{{#if lastName}} {{lastName}}{{/if}}
           </span>,
         </p>
 
-        <p>
-          Nous tenions à vous adresser un merci sincère et chaleureux pour votre engagement auprès de la Fondation Mélanie.
-        </p>
+        <p>Votre parrainage est désormais <strong>confirmé</strong>.</p>
+
+        <div class="badge">✓ Parrainage actif</div>
 
         <p>
-          Votre formulaire de parrainage a bien été reçu, et nous sommes très heureux de vous accueillir parmi les parrains et marraines qui font la différence dans la vie des enfants et des étudiants que nous accompagnons.
+          Nous vous remercions chaleureusement pour votre engagement. Grâce à vous, un enfant ou un étudiant bénéficie désormais d’un accompagnement concret vers l’éducation et un avenir meilleur.
         </p>
 
+        {{#if beneficiaryName}}
         <p>
-          Dans les tout prochains jours, notre équipe prendra contact avec vous afin de :
+          Vous parrainez : <span class="highlight">{{beneficiaryName}}</span>
         </p>
-        <ul>
-          <li>Confirmer officiellement votre parrainage,</li>
-          <li>Vous transmettre les informations de paiement (virement bancaire ou Mobile Money),</li>
-          <li>Et vous communiquer un lien sécurisé vous permettant de choisir l’enfant à parrainer, conformément à vos souhaits.</li>
-        </ul>
+        {{/if}}
 
         <p>
-          Une fois le parrainage finalisé, vous recevrez :
-        </p>
-        <ul>
-          <li>La confirmation définitive,</li>
-          <li>Les premières informations sur le bénéficiaire,</li>
-          <li>Ainsi que le calendrier de suivi et de communication de la Fondation.</li>
-        </ul>
-
-        <p>
-          Votre engagement est un geste fort. Il ouvre la voie à l’éducation, à la dignité et à un avenir meilleur.
+          Vous recevrez prochainement les informations de suivi et le calendrier de communication de la Fondation. N’hésitez pas à nous contacter pour toute question.
         </p>
 
         {{#if partnerUrl}}
@@ -70,10 +57,6 @@
           <a href="{{partnerUrl}}" class="cta">Consulter mon portail</a>
         </div>
         {{/if}}
-
-        <p>
-          Nous vous remercions profondément pour la confiance que vous nous accordez.
-        </p>
 
         <p>
           Avec toute notre gratitude,<br>

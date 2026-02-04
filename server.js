@@ -47,7 +47,7 @@ app.post('/notify', async (req, res) => {
                     to: recipients.email,
                     subject: subject,
                     templateName: template ? template.name : undefined,
-                    templateData: template ? template.data : undefined,
+                    templateData: template ? { ...template.data, partnerUrl: config.partner?.url } : undefined,
                     text: text,
                 });
                 break;
