@@ -1,0 +1,23 @@
+{
+  "name": "melanie-notification",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "handlebars": "^4.7.8",
+    "joi": "^18.0.2",
+    "node-telegram-bot-api": "^0.67.0",
+    "nodemailer": "^7.0.13",
+    "twilio": "^5.12.0"
+  }
+}

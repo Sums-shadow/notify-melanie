@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenue - Fondation MÉLANIE</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+    .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
+    .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; }
+    .content { padding: 32px 24px; color: #374151; line-height: 1.6; }
+    .content p { margin: 0 0 16px; }
+    .highlight { font-weight: 600; color: #111827; }
+    .cta { display: inline-block; margin: 24px 0; padding: 14px 28px; background: #8fb83e; color: #111827; text-decoration: none; border-radius: 9999px; font-weight: 600; }
+    .cta:hover { background: #bae557; }
+    .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
+    .url-note { margin-top: 16px; padding: 12px; background: #f9fafb; border-radius: 8px; font-size: 14px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <h1>Fondation MÉLANIE</h1>
+      </div>
+      <div class="content">
+        <p>Bonjour <span class="highlight">{{name}}</span>,</p>
+
+        <p>Nous avons bien reçu votre demande de parrainage et nous vous en remercions.</p>
+
+        <p><strong>Bienvenue au sein de la Fondation MÉLANIE.</strong> Votre engagement compte pour les enfants et les familles que nous accompagnons.</p>
+
+        <p>Pour accéder à votre espace partenaire, consulter le suivi de votre parrainage et échanger avec nous, connectez-vous sur la plateforme :</p>
+
+        <p style="text-align: center;">
+          <a href="https://partenaire.melaniefondation.com" class="cta">Se connecter à l'espace partenaire</a>
+        </p>
+
+        <div class="url-note">
+          Lien : <a href="https://partenaire.melaniefondation.com">https://partenaire.melaniefondation.com</a>
+        </div>
+
+        <p>Utilisez l’adresse email avec laquelle vous vous êtes inscrit : <strong>{{email}}</strong></p>
+
+        <p>À très bientôt sur la plateforme,<br>L’équipe Fondation MÉLANIE</p>
+      </div>
+      <div class="footer">
+        © {{year}} Fondation MÉLANIE. Tous droits réservés.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
