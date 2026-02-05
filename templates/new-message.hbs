@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouveau message - Fondation MÉLANIE</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+    .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
+    .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em; }
+    .content { padding: 32px 24px; color: #374151; line-height: 1.7; }
+    .content p { margin: 0 0 16px; }
+    .highlight { font-weight: 600; color: #111827; }
+    .message-box { margin: 24px 0; padding: 20px; background: #f9fafb; border-radius: 12px; border-left: 4px solid #8fb83e; }
+    .message-box .message-title { font-weight: 600; color: #111827; margin-bottom: 12px; }
+    .message-box .message-body { color: #4b5563; white-space: pre-wrap; }
+    .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
+    .cta-wrap { text-align: center; margin: 28px 0; }
+    .cta { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); color: #ffffff; text-decoration: none; border-radius: 9999px; font-weight: 600; font-size: 16px; box-shadow: 0 2px 8px rgba(143, 184, 62, 0.35); }
+    .cta:hover { opacity: 0.95; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <h1>Fondation MÉLANIE</h1>
+      </div>
+      <div class="content">
+        <p>
+          Bonjour
+          <span class="highlight">
+            {{#if civilite}}{{civilite}}, {{/if}}{{#if name}}{{name}}{{/if}}{{#if firstName}} {{firstName}}{{/if}}{{#if lastName}} {{lastName}}{{/if}}
+          </span>,
+        </p>
+
+        <p>Vous avez reçu un nouveau message.</p>
+
+        {{#if senderName}}
+        <p><span class="highlight">Expéditeur :</span> {{senderName}}</p>
+        {{/if}}
+
+        <div class="message-box">
+          {{#if messageTitle}}
+          <div class="message-title">{{messageTitle}}</div>
+          {{/if}}
+          {{#if messageContent}}
+          <div class="message-body">{{messageContent}}</div>
+          {{/if}}
+        </div>
+
+        {{#if partnerUrl}}
+        <div class="cta-wrap">
+          <a href="{{partnerUrl}}" class="cta">Voir le message</a>
+        </div>
+        {{/if}}
+
+        <p>
+          Cordialement,<br>
+          L’équipe de la Fondation Mélanie.
+        </p>
+      </div>
+      <div class="footer">
+        © {{year}} Fondation MÉLANIE. Tous droits réservés.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

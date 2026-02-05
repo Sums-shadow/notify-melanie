@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmation de parrainage - Fondation MÉLANIE</title>
+  <title>Paiement reçu - Fondation MÉLANIE</title>
   <style>
     body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
     .wrapper { max-width: 600px; margin: 0 auto; padding: 24px; }
     .card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.07); overflow: hidden; }
     .header { background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); padding: 32px 24px; text-align: center; }
-    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em;}
+    .header h1 { margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: .01em; }
     .content { padding: 32px 24px; color: #374151; line-height: 1.7; }
     .content p { margin: 0 0 16px; }
     .highlight { font-weight: 600; color: #111827; }
+    .payment-box { margin: 24px 0; padding: 24px; background: #ecfdf5; border-radius: 12px; border: 1px solid #a7f3d0; }
+    .payment-row { display: flex; justify-content: space-between; margin: 12px 0; }
+    .payment-label { color: #047857; }
+    .payment-value { font-weight: 700; color: #065f46; font-size: 18px; }
     .footer { padding: 24px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e5e7eb; }
-    ul { margin: 0 0 20px 16px; padding: 0; color: #374151;}
-    li { margin-bottom: 10px;}
     .cta-wrap { text-align: center; margin: 28px 0; }
     .cta { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #1f2937 0%, #8fb83e 100%); color: #ffffff; text-decoration: none; border-radius: 9999px; font-weight: 600; font-size: 16px; box-shadow: 0 2px 8px rgba(143, 184, 62, 0.35); }
     .cta:hover { opacity: 0.95; }
@@ -29,44 +31,35 @@
       </div>
       <div class="content">
         <p>
-          Bonjour 
+          Bonjour
           <span class="highlight">
             {{#if civilite}}{{civilite}}, {{/if}}{{#if name}}{{name}}{{/if}}{{#if firstName}} {{firstName}}{{/if}}{{#if lastName}} {{lastName}}{{/if}}
           </span>,
         </p>
 
         <p>
-          Un grand merci pour votre engagement auprès de la Fondation Mélanie. Votre démarche est précieuse, et nous sommes très heureux de vous compter parmi celles et ceux qui choisissent de soutenir concrètement l’avenir des enfants et des étudiants que nous accompagnons.
+          Nous vous remercions chaleureusement. Nous avons bien reçu votre paiement et vous confirmons son enregistrement.
         </p>
 
-        <p>
-          Nous vous confirmons la bonne réception de votre formulaire de parrainage.
-        </p>
+        <div class="payment-box">
+          <div class="payment-row">
+            <span class="payment-label">Montant perçu</span>
+            <span class="payment-value">{{amount}}</span>
+          </div>
+          <div class="payment-row">
+            <span class="payment-label">Date de réception</span>
+            <span class="highlight">{{paymentDate}}</span>
+          </div>
+          {{#if reference}}
+          <div class="payment-row">
+            <span class="payment-label">Référence</span>
+            <span class="highlight">{{reference}}</span>
+          </div>
+          {{/if}}
+        </div>
 
         <p>
-          Dans les prochains jours, notre équipe prendra personnellement contact avec vous afin de :
-        </p>
-        <ul>
-          <li>valider votre parrainage,</li>
-          <li>vous transmettre les modalités de paiement (virement bancaire ou Mobile Money),</li>
-          <li>et vous accompagner dans le choix de l’enfant à parrainer, en accord avec vos préférences.</li>
-        </ul>
-
-        <p>
-          Dès maintenant, vous pouvez créer votre espace personnel « Parrain » sur notre portail. Cet espace vous permettra de choisir votre filleul, de suivre l’évolution de votre parrainage et de rester informé des actions menées grâce à votre soutien.
-        </p>
-
-        <p>
-          Une fois le parrainage finalisé, vous recevrez :
-        </p>
-        <ul>
-          <li>la confirmation officielle,</li>
-          <li>les premières informations concernant votre filleul,</li>
-          <li>ainsi que le calendrier de suivi et de communication de la Fondation.</li>
-        </ul>
-
-        <p>
-          Votre engagement est un acte fort, porteur d’espoir et d’opportunités. Grâce à vous, un enfant pourra avancer avec confiance vers un avenir meilleur.
+          Votre soutien permet à la Fondation Mélanie de poursuivre ses actions en faveur des enfants et des étudiants. Merci pour votre confiance et votre générosité.
         </p>
 
         {{#if partnerUrl}}
@@ -74,10 +67,6 @@
           <a href="{{partnerUrl}}" class="cta">Accéder à mon espace Parrain</a>
         </div>
         {{/if}}
-
-        <p>
-          Nous vous remercions sincèrement pour votre confiance.
-        </p>
 
         <p>
           Avec toute notre reconnaissance,<br>
