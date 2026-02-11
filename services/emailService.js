@@ -10,10 +10,13 @@ const handlebarsOptions = {
 };
 
 // Create a transporter using the Nodemailer configuration from config.js
+// Port 587 = STARTTLS (secure: false, requireTLS: true). Port 465 = direct TLS (secure: true).
 const transporter = nodemailer.createTransport({
     host: config.mail.host,
     port: config.mail.port,
     secure: config.mail.secure,
+    requireTLS: config.mail.requireTLS,
+    tls: { rejectUnauthorized: config.mail.tlsRejectUnauthorized },
     auth: {
         user: config.mail.user,
         pass: config.mail.pass,

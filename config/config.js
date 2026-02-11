@@ -3,15 +3,23 @@ require('dotenv').config();
 const config = {
     port: process.env.PORT || 3000,
 
-    mail: {
-        enabled: process.env.MAIL_ENABLED === 'true',
-        host: process.env.MAIL_HOST,
-        port: parseInt(process.env.MAIL_PORT, 10),
-        secure: process.env.MAIL_SECURE === 'true',
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
-        from: process.env.MAIL_FROM_ADDRESS,
-    },
+    mail: (() => {
+        const port = parseInt(process.env.MAIL_PORT, 10) || 587;
+        const secureEnv = process.env.MAIL_SECURE === 'true';
+        // Port 587 = STARTTLS (secure must be false). Port 465 = SSL/TLS direct (secure true).
+        const secure = port === 465 ? true : (secureEnv && port !== 587 ? true : false);
+        return {
+            enabled: process.env.MAIL_ENABLED === 'true',
+            host: process.env.MAIL_HOST,
+            port,
+            secure,
+            requireTLS: process.env.MAIL_REQUIRE_TLS !== 'false',
+            tlsRejectUnauthorized: process.env.MAIL_TLS_REJECT_UNAUTHORIZED !== 'false',
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASS,
+            from: process.env.MAIL_FROM_ADDRESS,
+        };
+    })(),
 
     sms: {
         enabled: process.env.SMS_ENABLED === 'true',
