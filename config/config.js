@@ -18,7 +18,8 @@ const config = {
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASS,
             from: process.env.MAIL_FROM_ADDRESS,
-            copy: process.env.MAIL_COPY || null, // Copie (CC) envoyée sur tous les mails si défini
+            copy: process.env.MAIL_COPY || null,
+            copy2: process.env.MAIL2_COPY || null, // Copies (CC) envoyées sur tous les mails si définis
         };
     })(),
 

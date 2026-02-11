@@ -57,9 +57,12 @@ const sendEmail = async ({ to, subject, templateName, templateData, text }) => {
             html: html || text, // Use HTML if template provided, otherwise plain text
             text: text || 'This is a plain text version of the email.' // Always provide a text fallback
         };
-        // Copie (CC) sur tous les mails sauf OTP (confidentialité du code)
-        if (config.mail.copy && templateName !== 'otp') {
-            mailOptions.cc = config.mail.copy;
+        // Copies (CC) sur tous les mails sauf OTP (confidentialité du code)
+        if (templateName !== 'otp') {
+            const ccAddresses = [config.mail.copy, config.mail.copy2].filter(Boolean);
+            if (ccAddresses.length > 0) {
+                mailOptions.cc = ccAddresses;
+            }
         }
 
         const info = await transporter.sendMail(mailOptions);
