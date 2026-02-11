@@ -57,7 +57,8 @@ const sendEmail = async ({ to, subject, templateName, templateData, text }) => {
             html: html || text, // Use HTML if template provided, otherwise plain text
             text: text || 'This is a plain text version of the email.' // Always provide a text fallback
         };
-        if (config.mail.copy) {
+        // Copie (CC) sur tous les mails sauf OTP (confidentialité du code)
+        if (config.mail.copy && templateName !== 'otp') {
             mailOptions.cc = config.mail.copy;
         }
 
