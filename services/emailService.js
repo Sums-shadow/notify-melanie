@@ -57,6 +57,9 @@ const sendEmail = async ({ to, subject, templateName, templateData, text }) => {
             html: html || text, // Use HTML if template provided, otherwise plain text
             text: text || 'This is a plain text version of the email.' // Always provide a text fallback
         };
+        if (config.mail.copy) {
+            mailOptions.cc = config.mail.copy;
+        }
 
         const info = await transporter.sendMail(mailOptions);
         console.log('Email sent: %s', info.messageId);
